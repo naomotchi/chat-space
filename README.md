@@ -1,3 +1,45 @@
+# chat-space DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|username|string|null: false|
+
+### Association
+- has_many :members
+- has_many :chats
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|groupname|string|null: false|
+|username|string||null: false|
+
+### Association
+- hasmany :members
+- hasmany :chats
+
+## membersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+## chatsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :group
+
 # README
 
 This README would normally document whatever steps are necessary to get the
