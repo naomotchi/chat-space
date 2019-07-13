@@ -2,10 +2,11 @@
   .left-chat__left-header
     .left-chat__left-box
       .left-chat__box__left-user-name
-        seo
+        = current_user.name
       .left-chat__box__menu
-        = fa_icon 'edit'
-        = fa_icon 'cog'
+        = fa_icon 'edit', class: 'icon'
+        = link_to edit_user_path(current_user) do
+          = fa_icon 'cog', class: 'icon'
   .left-chat__left-groups
     .left-chat__left-group
       .left-chat__left-group-name
