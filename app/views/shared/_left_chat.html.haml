@@ -1,0 +1,18 @@
+.left-chat
+  .left-chat__left-header
+    .left-chat__left-box
+      .left-chat__box__left-user-name
+        = current_user.name
+      .left-chat__box__menu
+        = link_to new_group_path do
+          = fa_icon 'edit', class: 'icon'
+        = link_to edit_user_path(current_user) do
+          = fa_icon 'cog', class: 'icon'
+  .left-chat__left-groups
+    - current_user.groups.each do |group|
+      .left-chat__left-group
+        = link_to group_messages_path(group), class: 'icon-link' do
+          .left-chat__left-group-name
+            = group.name
+          .left-chat__left-group-messege
+            まだメッセージなし
