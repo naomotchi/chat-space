@@ -1,9 +1,11 @@
 @import "./reset";
 @import "font-awesome";
-@import "./messages";
-@import "./main-chat";
-@import "./left-chat";
-@import "./chat.scss";
-@import "./user";
 @import "config/colors";
+@import "modules/user";
 @import "modules/flash";
+@import "modules/chat";
+@import "modules/left_chat";
+@import "modules/group";
+@import "./messages";
+@import "./main_chat";
+@import "./left_chat";

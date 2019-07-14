@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
 
-
-  def create
-    # user.create(name: user_params[:name], email: user_params[:email])
+  def index
   end
 
-  def edit
-  end
+
+
 
   def update
     if current_user.update(user_params)

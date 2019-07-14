@@ -28,9 +28,12 @@
       line-height: 40px;
       padding: 0 20px;
       margin-top: 30px;
-      color: #38aef0;
       position: absolute;
       right: 40px;
+      .btn {
+        color: #38aef0;
+        text-decoration: none;
+      }
     }
     &__main-contents {
       height: calc(100vh - 190px);
