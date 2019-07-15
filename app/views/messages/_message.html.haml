@@ -1,0 +1,10 @@
+.main-chat__main-messages
+  .main-chat__main-messages-user
+    = message.user.name
+  .main-chat__main-messages-data
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .main-chat__main-messages-coment
+    - if message.text.present?
+      %p.message__text
+        = message.text
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

@@ -36,11 +36,13 @@
       }
     }
     &__main-contents {
-      height: calc(100vh - 190px);
+      height: calc(100vh - 285px);
       background-color: #fafafa;
+      overflow: scroll;
+      padding: 46px 40px;
     }
     &__main-messages {
-      padding: 46px 40px;
+      padding-bottom: 40px;
     }
     &__main-messages-user {
       font-size: 16px;
@@ -60,40 +62,54 @@
       color: #434a54;
       padding-bottom: 40px;
     }
-    &__from {
+    &__form {
       height: 70px;
       padding: 20px 40px;
       background-color: #ddd;
       display: flex;
     }
-    &__from-tag {
-      background-color: white;
-      height: 50px;
-      width: 100%;
-      font-size: 16px;
-      color: #434a54;
-      float: left;
-      line-height: 50px;
-      padding: 0 40px 0 10px;
-      margin-top: 10px;
-      position: relative;
+    .input, textarea, select {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
     }
-    &__from-image {
-      display: inline-block;
+    &__input-box {
+      width: 85%;
+      .form__message{
+        background-color: white;
+        height: 50px;
+        width: 100%;
+        font-size: 16px;
+        color: #434a54;
+        float: left;
+        line-height: 50px;
+        padding: 0 40px 0 10px;
+        margin-top: 10px;
+        border-style: none;
+      }
+    }
+    &__form-image {
+      font-size: inherit;
+      text-rendering: auto;
+      line-height: 70px;
+      font-size: 1.3rem;
       position: absolute;
-      right: 10px;
-      
-    }
-    &__submit-btn {
+      right: 160px;
+      .hidden{
+        display: none;
+      }
+      }
+    .submit-btn {
       width: 100px;
       height: 50px;
       padding: 0 30px;
-      margin: 10px 0 0 15px;
+      margin: 10px 0 15px;
       background-color: #38aef0;
       color: white;
       text-align: center;
       line-height: 50px;
-      float: right;
+      position: absolute;
+      right: 30px;
       box-sizing: border-box;
     }
 }
