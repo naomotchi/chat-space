@@ -69,7 +69,7 @@ $(function(){
                       ${message.user_name}
                     </div>
                     <div class="main-chat__main-messages-data">
-                      ${message.date}
+                      ${message.created_at}
                     </div>
                     <div class="main-chat__main-messages-coment">
                       <p class="message__text">
@@ -83,7 +83,7 @@ $(function(){
                       ${message.user_name}
                     </div>
                     <div class="main-chat__main-messages-data">
-                      ${message.date}
+                      ${message.created_at}
                     </div>
                     <div class="main-chat__main-messages-coment">
                      <img src="${message.image.url}">
@@ -93,7 +93,10 @@ $(function(){
     return html;
   };
   var reloadMessages = setInterval(function() {
+
     var last_message_id = $('.main-chat__main-messages:last').data('id');
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -103,16 +106,17 @@ $(function(){
     .done(function(messages) {
       var insertHTML = '';
       messages.forEach(function (message){
-      insertHTML = buildMessageHTML(message);
-      $('.main-chat__main-contents').append(insertHTML);
-      $('.main-chat__main-contents').animate({
-        scrollTop: $('.main-chat__main-contents')[0].scrollHeight
-      }, 'fast');
-    })
-  })
+        insertHTML = buildMessageHTML(message);
+        $('.main-chat__main-contents').append(insertHTML);
+      })
+        $('.main-chat__main-contents').animate({
+          scrollTop: $('.main-chat__main-contents')[0].scrollHeight
+        }, 'fast');
+      })
     .fail(function() {
       alert('自動更新できませんでした');
     });
-    },5000);
+    }
+  },5000);
     reloadMessages;
 });
