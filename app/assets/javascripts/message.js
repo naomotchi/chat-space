@@ -108,15 +108,16 @@ $(function(){
       messages.forEach(function (message){
         insertHTML = buildMessageHTML(message);
         $('.main-chat__main-contents').append(insertHTML);
-      })
         $('.main-chat__main-contents').animate({
           scrollTop: $('.main-chat__main-contents')[0].scrollHeight
         }, 'fast');
       })
+    })
     .fail(function() {
       alert('自動更新できませんでした');
     });
     }
+
   },5000);
     reloadMessages;
 });
