@@ -75,4 +75,5 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem "nokogiri", ">= 1.10.4"
 end
